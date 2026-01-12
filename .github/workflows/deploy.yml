@@ -30,7 +30,7 @@ jobs:
       # SSH接続を行い、Xserver上でpullしてデプロイを行う
       - name: Deploy to server
         run: |
-          ssh -p $SSH_PORT $SSH_USERNAME@$SSH_HOST << 'EOF'
-            cd {プロジェクトフォルダのパス} || exit
-            git pull origin main || exit
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p "$SSH_PORT" "$SSH_USERNAME@$SSH_HOST" << 'EOF'
+            cd /xs267406.xsrv.jp/public_html || exit 1
+            git pull origin main || exit 1
           EOF
