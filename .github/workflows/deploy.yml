@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-to-xserver:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
       DATABASE_ID: ${{ secrets.DATABASE_ID }}
